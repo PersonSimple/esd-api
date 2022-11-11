@@ -2,10 +2,10 @@ package com.code.develop.controller;
 
 import java.util.ArrayList;
 
-import javax.websocket.server.PathParam;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,12 +14,17 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.code.develop.model.AngelUser;
+import com.code.develop.repository.AngelRepository;
 
+
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api")
 public class AngelController {
+	
+	@Autowired
+	private AngelRepository repo;
 	
 	/**
 	 * this will save email, password , default first_time_login : boolean (0,1)
@@ -27,6 +32,8 @@ public class AngelController {
 	 * @param user
 	 * @return
 	 */
+	
+	
 	@PostMapping("/saveAngelUserLoginDetail")
 	public  ResponseEntity<AngelUser> saveAngelUserLoginDetail(@RequestBody AngelUser angelUser) {
 		 return new ResponseEntity<>(
@@ -40,9 +47,8 @@ public class AngelController {
 		return  true;
 	}
 	
-
 	@PutMapping("/updateAngelUserById")
-	public   ResponseEntity<AngelUser> updateAngelUserById( @RequestBody AngelUser angelUser) {
+	public  ResponseEntity<AngelUser> updateAngelUserById( @RequestBody AngelUser angelUser) {
 		//stub code 
 		return new ResponseEntity<>(
 		          new AngelUser(), 
@@ -52,7 +58,7 @@ public class AngelController {
 	@GetMapping("/getAngelUserById/{ahId}")
 	public  ResponseEntity<AngelUser> getAngelUserById( @PathVariable ("ahId") Long ahId) {
 		//stub code 
-		return new ResponseEntity<>(
+		return new ResponseEntity<AngelUser>(
 		          new AngelUser(), 
 		          HttpStatus.OK); // object having the provided id
 	}

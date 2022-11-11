@@ -1,13 +1,23 @@
-package com.code.develop.model;
+package com.code.develop.data;
 
 import java.util.Date;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Lob;
 
-public class AngelUser {
+import org.hibernate.annotations.GeneratorType;
 
+@Entity
+public class Angel {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long ahId;
+
 	private String ahName;
 	private String ahContactNumber;
 	private String ahAddress;
@@ -27,6 +37,8 @@ public class AngelUser {
 
 	private String fileName;
 	private String fileType;
+
+	@Lob
 	private byte[] data;
 
 	public String getFileName() {
@@ -179,7 +191,7 @@ public class AngelUser {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		AngelUser other = (AngelUser) obj;
+		Angel other = (Angel) obj;
 		return Objects.equals(ahEmail, other.ahEmail) && Objects.equals(ahId, other.ahId);
 	}
 
