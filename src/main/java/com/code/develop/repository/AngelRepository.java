@@ -2,9 +2,12 @@ package com.code.develop.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-import com.code.develop.data.Angel;
+import com.code.develop.data.AngelTable;
 
-
-public interface AngelRepository extends CrudRepository<Angel, Long> {
+@Repository
+public interface AngelRepository extends CrudRepository<AngelTable, Long> {
+	
+	
 }

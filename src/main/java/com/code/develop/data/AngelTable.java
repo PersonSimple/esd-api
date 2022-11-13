@@ -3,6 +3,7 @@ package com.code.develop.data;
 import java.util.Date;
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,14 +11,16 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 
 import org.hibernate.annotations.GeneratorType;
+import org.springframework.stereotype.Component;
 
+@Component
 @Entity
-public class Angel {
+public class AngelTable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long ahId;
-
+   
 	private String ahName;
 	private String ahContactNumber;
 	private String ahAddress;
@@ -191,7 +194,7 @@ public class Angel {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Angel other = (Angel) obj;
+		AngelTable other = (AngelTable) obj;
 		return Objects.equals(ahEmail, other.ahEmail) && Objects.equals(ahId, other.ahId);
 	}
 

@@ -27,6 +27,7 @@ public class AngelUser {
 
 	private String fileName;
 	private String fileType;
+	
 	private byte[] data;
 
 	public String getFileName() {
