@@ -5,6 +5,8 @@ import java.util.Objects;
 
 import javax.persistence.Lob;
 
+import org.springframework.stereotype.Component;
+@Component
 public class AngelUser {
 
 	private Long ahId;

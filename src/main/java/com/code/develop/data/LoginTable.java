@@ -19,6 +19,27 @@ public class LoginTable {
 
 	private String email;
 	private String password;
+	private String firstName;
+	private String lastName;
+	private String typeUser;
+	private String modileNo;
+	private Boolean newUser = true;
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
 	public Long getId() {
 		return id;
@@ -42,6 +63,31 @@ public class LoginTable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+
+	public String getTypeUser() {
+		return typeUser;
+	}
+
+	public void setTypeUser(String typeUser) {
+		this.typeUser = typeUser;
+	}
+
+	public String getModileNo() {
+		return modileNo;
+	}
+
+	public void setModileNo(String modileNo) {
+		this.modileNo = modileNo;
+	}
+
+	public Boolean getNewUser() {
+		return newUser;
+	}
+
+	public void setNewUser(Boolean newUser) {
+		this.newUser = newUser;
 	}
 
 	@Override

@@ -18,4 +18,5 @@ public interface LoginRepository extends CrudRepository<LoginTable, Long> {
 	
 	
 	
+	
 }
